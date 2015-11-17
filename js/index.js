@@ -63,7 +63,7 @@ $.urlParam = function(name,url){
 function handler(parameters,callback){
   $.ajax({
      type: 'get',
-     url: 'http://127.0.0.1:3000/get_product_details',
+     url: 'http://104.131.165.92:8081/get_product_details',
      data : parameters,
      success: function(d){
       callback(d);
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(parameters);
       $.ajax({
         type: 'get',
-        url: 'http://127.0.0.1:3000/alerting',
+        url: 'http://104.131.165.92:8081/alerting',
         data : parameters,
         success: function(d){
           console.log(d);
