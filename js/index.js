@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log("error");
         }
       });
+      alert("You will receive an email, whenever the product price reaches according to you condition.");
   });
 
   $(document).ready(function(){
