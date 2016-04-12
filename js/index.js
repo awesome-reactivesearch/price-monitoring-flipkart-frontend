@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(parameters);
       $.ajax({
         type: 'get',
-        url: 'http://104.131.165.92:8081/alerting',
+        url: 'http://104.131.165.92:8081/set_alert',
         data : parameters,
         success: function(d){
           console.log(d);
