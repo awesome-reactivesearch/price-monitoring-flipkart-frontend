@@ -5,17 +5,19 @@
  value "popup.html".
  -->
 <html>
-  <head>
+
+<head>
     <title>Getting Started Extension's Popup</title>
     <style>
-      body {
+    body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
         min-width: 500px;
-      }
-      .form-control {
+    }
+    
+    .form-control {
         margin-bottom: 15px;
-      }
+    }
     </style>
     <script src="js/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -27,30 +29,39 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-  </head>
-  <body>
-  <div class="container">
-    <div class="row">
-      <center><h3>Flipkart</h3><h4>Product Price alert setter</h4></center>
-    </div>
-    <div class="well">
-        <select class="form-control inline" id="dropper">
-          <option value="lcp">Less Than Current Price</option>
-          <option value="fp">Fixed Price</option>
-          <option value="lt">Less Than</option>
-        </select>
-        <input id="gt" style="display:none;" name="gt" ></input>
-        <input class="form-control" id="lt" name="lt" placeholder="Set Price"></input>
-        <input class="form-control" id="email" name="email" placeholder="Enter your email..."></input>
-        <center><button class="btn btn-primary" id="submit" name="submit">Get Notification</button></center>
-    </div>
-        <table>
-        <tr>
-        <td><img id="img" src="" height="200" width="150"></img></td>
-        <td style="padding-left:50px;"><p><b>Product Name  : </b><span id="details"></span></p>
-        <p><b>Current Price : </b><span id="current_price"></span></p></td>
-        </tr>
-        </table>
-  </body>
-</html>
+</head>
 
+<body>
+    <div class="container">
+        <div class="row">
+            <center>
+                <h3>Flipkart</h3>
+                <h4>Product Price alert setter</h4>
+            </center>
+        </div>
+        <div class="well">
+            <select class="form-control inline" id="dropper">
+                <option value="lcp">Less Than Current Price</option>
+                <option value="fp">Fixed Price</option>
+                <option value="lt">Less Than</option>
+            </select>
+            <input id="gt" style="display:none;" name="gt"></input>
+            <input class="form-control" id="lt" name="lt" placeholder="Set Price"></input>
+            <input class="form-control" id="email" name="email" placeholder="Enter your email..."></input>
+            <center>
+                <button class="btn btn-primary" id="submit" name="submit">Get Notification</button>
+            </center>
+        </div>
+        <table>
+            <tr>
+                <td><img id="img" src="" height="200" width="150"></img>
+                </td>
+                <td style="padding-left:50px;">
+                    <p><b>Product Name  : </b><span id="details"></span></p>
+                    <p><b>Current Price : </b><span id="current_price"></span></p>
+                </td>
+            </tr>
+        </table>
+</body>
+
+</html>
