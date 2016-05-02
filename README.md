@@ -1,5 +1,5 @@
-# Flipkart Product price alert
-This is the front-end module of the chrome extension where one can set product price alert. You first need to start the server before installing the Chrome extension. If you haven't done it yet, follow the steps mentioned on the backend repository [here](https://github.com/puneet24/flipkart_extension_backend).
+# Price Monitoring Chrome Extension
+This is the front-end module of the chrome extension where one can set price alert of the product. You first need to start the server before installing the Chrome extension. If you haven't done it yet, follow the steps mentioned on the backend repository [here](https://github.com/puneet24/flipkart_extension_backend).
 
 
 ## Installing Chrome Extension    
