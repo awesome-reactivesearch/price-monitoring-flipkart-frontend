@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Ecommerce extension",
-  "description": "This extension gives the feature of setting notification alert on ecommerce websites products",
+  "name": "Flipkart price tracker",
+  "description": "This extension allows you to motitor the price of everything you want and receive mail alerts when it reaches your price point",
   "version": "1.0",
 
   "browser_action": {
