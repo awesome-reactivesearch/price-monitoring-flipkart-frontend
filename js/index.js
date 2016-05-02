@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         console.log(parameters);
         $.ajax({
-            type: 'post',
-            url: server_address + '/set_alert',
+            type: 'GET',
+            url: server_address + '/alert',
             data: parameters,
             success: function(d) {
                 console.log(d);
