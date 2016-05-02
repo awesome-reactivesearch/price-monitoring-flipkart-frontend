@@ -9,6 +9,7 @@
  *   is found.
  */
 
+const server_address = "http://104.131.165.92:8081"
 var product_detail;
 
 function getCurrentTabUrl(callback) {
@@ -54,7 +55,7 @@ $.urlParam = function(name, url) {
 function getProductDetails(parameters, callback) {
     $.ajax({
         type: 'get',
-        url: 'http://104.131.165.92:8081/get_product_details',
+        url: server_address + '/get_product_details',
         data: parameters,
         success: function(d) {
             callback(d);
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(parameters);
         $.ajax({
             type: 'post',
-            url: 'http://104.131.165.92:8081/set_alert',
+            url: server_address + '/set_alert',
             data: parameters,
             success: function(d) {
                 console.log(d);
