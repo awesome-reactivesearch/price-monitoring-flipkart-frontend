@@ -66,6 +66,16 @@ function getProductDetails(parameters, callback) {
     });
 }
 
+/* 
+Simply adding the dyanamic feature. I UI there is select dropdown
+ which is for range selection and this function is to add the event handling
+ when select box is changed. Event handling done using jquery.
+    Conventions -
+    1) lcp :- less than current price
+    2) fp :- fixed price
+Below Select dropdown there are 2 input boxes, so on changing dropdown value ,
+this event is triggered and is responsible for changing the values of input boxes.
+ */
 document.addEventListener('DOMContentLoaded', function() {
     $('select#dropper').on('change', function() {
         if ($('#dropper').val() == "lcp") {
@@ -82,11 +92,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    /*
+        Event handling when less than input box is changed then greater input
+        value should also get change only when selected value from dropdown is fp.
+    */
     $('#lt').on('change', function() {
         if ($('#dropper').val() == "fp")
             $('#gt').val($('#lt').val());
     });
 
+    /*
+        This is to add the event on click of submit button, So as soon as submit button
+        is clicked it sends all the parameters through ajax call.
+    */
     $('#submit').on('click', function() {
         var parameters = {
             'lte': $('#lt').val(),
@@ -95,6 +113,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'product_id': product_detail.product_id
         }
         console.log(parameters);
+        /*
+            Ajax call to the server with all the parameters.
+        */
         $.ajax({
             type: 'GET',
             url: server_address + '/alert',
@@ -109,6 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
         alert("You will receive an email, whenever the product price reaches according to you condition.");
     });
 
+    /*
+        This function is for calling the getCurrentTabUrl method as soon as the extension is
+        loaded. This method is called with the callback function as parameter. Basically this 
+        function is responsible for loading the product image and prics as soon as the flipkart
+        product page is opened.
+    */
     $(document).ready(function() {
         getCurrentTabUrl(function(url) {
             console.log(url);
