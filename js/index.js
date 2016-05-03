@@ -55,7 +55,7 @@ $.urlParam = function(name, url) {
 function getProductDetails(parameters, callback) {
   $.ajax({
     type: 'get',
-    url: server_address + '/get_product_details',
+    url: server_address + '/product',
     data: parameters,
     success: function(d) {
       callback(d);
