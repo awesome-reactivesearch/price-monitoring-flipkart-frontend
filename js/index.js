@@ -119,9 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   $(document).ready(function() {
+    // Get the current tab URL and fetch the product ID
     getCurrentTabUrl(function(url) {
       if ($.urlParam('pid', url) != null) {
+        // Fetch the product details from the product ID
         getProductDetails({ 'product_id': $.urlParam('pid', url) }, function(data) {
+          //  Display the product details in the extension
           product_detail = data;
           $('#details').text(product_detail.details);
           $('#current_price').text(product_detail.price);
