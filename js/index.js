@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
             'email': $('#email').val(),
             'product_id': product_detail.product_id
         }
-        console.log(parameters);
         $.ajax({
             type: 'GET',
             url: server_address + '/alert',
@@ -121,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $(document).ready(function() {
         getCurrentTabUrl(function(url) {
-            console.log(url);
             if ($.urlParam('pid', url) != null) {
                 getProductDetails({ 'product_id': $.urlParam('pid', url) }, function(data) {
                     product_detail = data;
