@@ -67,30 +67,40 @@ function getProductDetails(parameters, callback) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    $('select#dropper').on('change', function() {
-        if ($('#dropper').val() == "lcp") {
-            $('#gt').val(0);
-            $('#lt').val(product_detail.price);
-            $('#lt').attr('readonly', 'true');
-        } else if ($('#dropper').val() == "fp") {
-            $('#gt').val(product_detail.price);
-            $('#lt').val(product_detail.price);
-            $('#lt').removeAttr('readonly');
-        } else {
-            $('#gt').val(0);
-            $('#lt').removeAttr('readonly');
+
+    // When price condition is changed
+    $('select#condition').on('change', function() {
+        // If the user has selected "Less than current price"
+        // We assign greaterThanInput value to  0
+        // and set the lessThanInput value to current price of the product
+        if ($('#condition').val() == "lessThanCurrent") {
+            $('#greaterThanInput').val(0);
+            $('#lessThanInput').val(product_detail.price);
+            $('#greaterThanInput').attr('readonly', 'true');
+        }
+        // If the user has selected "Fixed price"
+        // We assign greaterThanInput value to be price entered by user
+        // and set the lessThanInput value to be price entered by user
+        else if ($('#condition').val() == "fixedPrice") {
+            $('#greaterThanInput').val(product_detail.price);
+            $('#greaterThanInput').val(product_detail.price);
+            $('#greaterThanInput').removeAttr('readonly');
+        }
+        // If the user has selected "Less than a value"
+        // We assign greaterThanInput value to 0
+        // and set the lessThanInput value to be price entered by user
+        else {
+            $('#greaterThanInput').val(0);
+            $('#greaterThanInput').removeAttr('readonly');
         }
     });
 
-    $('#lt').on('change', function() {
-        if ($('#dropper').val() == "fp")
-            $('#gt').val($('#lt').val());
-    });
-
+    // On clicking the set alert button, we make a call to our server
+    // Sever indexes the product and set a trigger to send mail when condition is met
     $('#submit').on('click', function() {
         var parameters = {
-            'lte': $('#lt').val(),
-            'gte': $('#gt').val(),
+            'lte': $('#lessThanInput').val(),
+            'gte': $('#greaterThanInput').val(),
             'email': $('#email').val(),
             'product_id': product_detail.product_id
         }

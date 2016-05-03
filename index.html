@@ -42,14 +42,14 @@
         </div>
         <!-- Form for setting the product price range for getting notification -->
         <div class="well">
-            <select class="form-control inline" id="dropper">
-                <option value="lcp">Less Than Current Price</option>
-                <option value="fp">Fixed Price</option>
-                <option value="lt">Less Than</option>
+            <select class="form-control inline" id="condition">
+                <option value="lessThanValue">Less than a Value</option>
+                <option value="lessThanCurrent">Less than Current Price</option>
+                <option value="fixedPrice">At a fixed Price</option>
             </select>
-            <input id="gt" style="display:none;" name="gt"></input>
-            <input class="form-control" id="lt" name="lt" placeholder="Set Price"></input>
-            <input class="form-control" id="email" name="email" placeholder="Enter your email..."></input>
+            <input id="greaterThanInput" style="display:none;"></input>
+            <input class="form-control" id="lessThanInput" placeholder="Set Price"></input>
+            <input class="form-control" id="email"  placeholder="Enter your email"></input>
             <center>
                 <button class="btn btn-primary" id="submit" name="submit">Set Alert</button>
             </center>
