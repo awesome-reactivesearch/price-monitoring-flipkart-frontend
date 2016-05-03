@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         getProductDetails({ 'product_id': $.urlParam('pid', url) }, function(data) {
           //  Display the product details in the extension
           product_detail = data;
-          $('#details').text(product_detail.details);
+          $('#name').text(product_detail.name);
           $('#current_price').text(product_detail.price);
           var image_url;
           for (var key in product_detail.imageurls) {
