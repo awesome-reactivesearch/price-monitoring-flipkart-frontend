@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Flipkart price tracker",
-  "description": "This extension allows you to motitor the price of everything you want and receive mail alerts when it reaches your price point",
+  "description": "This extension allows you to monitor the price of everything you want and receive mail alerts when it reaches your price point",
   "version": "1.0",
 
   "browser_action": {
