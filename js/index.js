@@ -9,8 +9,8 @@
  *   is found.
  */
 
-const server_address = "http://104.131.165.92:8081"
-var product_detail;
+const serverAddress = "http://104.131.165.92:8081"
+var productDetail;
 
 function getCurrentTabUrl(callback) {
   // Query filter to be passed to chrome.tabs.query - see
@@ -55,7 +55,7 @@ $.urlParam = function(name, url) {
 function getProductDetails(parameters, callback) {
   $.ajax({
     type: 'get',
-    url: server_address + '/product',
+    url: serverAddress + '/product',
     data: parameters,
     success: function(d) {
       callback(d);
@@ -75,15 +75,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // and set the lessThanInput value to current price of the product
     if ($('#condition').val() == "lessThanCurrent") {
       $('#greaterThanInput').val(0);
-      $('#lessThanInput').val(product_detail.price);
+      $('#lessThanInput').val(productDetail.price);
       $('#greaterThanInput').attr('readonly', 'true');
     }
     // If the user has selected "Fixed price"
     // We assign greaterThanInput value to be price entered by user
     // and set the lessThanInput value to be price entered by user
     else if ($('#condition').val() == "fixedPrice") {
-      $('#greaterThanInput').val(product_detail.price);
-      $('#greaterThanInput').val(product_detail.price);
+      $('#greaterThanInput').val(productDetail.price);
+      $('#greaterThanInput').val(productDetail.price);
       $('#greaterThanInput').removeAttr('readonly');
     }
     // If the user has selected "Less than a value"
@@ -102,11 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
       'lte': $('#lessThanInput').val(),
       'gte': $('#greaterThanInput').val(),
       'email': $('#email').val(),
-      'product_id': product_detail.product_id
+      'productId': productDetail.productId
     }
     $.ajax({
       type: 'GET',
-      url: server_address + '/alert',
+      url: serverAddress + '/alert',
       data: parameters,
       success: function(d) {
         console.log(d);
@@ -123,16 +123,16 @@ document.addEventListener('DOMContentLoaded', function() {
     getCurrentTabUrl(function(url) {
       if ($.urlParam('pid', url) != null) {
         // Fetch the product details from the product ID
-        getProductDetails({ 'product_id': $.urlParam('pid', url) }, function(data) {
+        getProductDetails({ 'productId': $.urlParam('pid', url) }, function(data) {
           //  Display the product details in the extension
-          product_detail = data;
-          $('#name').text(product_detail.name);
-          $('#current_price').text(product_detail.price);
-          var image_url;
-          for (var key in product_detail.imageurls) {
-            image_url = product_detail.imageurls[key];
+          productDetail = data;
+          $('#name').text(productDetail.name);
+          $('#current_price').text(productDetail.price);
+          var imageURL;
+          for (var key in productDetail.imageurls) {
+            imageURL = productDetail.imageurls[key];
           }
-          $('#img').attr('src', image_url);
+          $('#img').attr('src', imageURL);
         });
       }
     });
