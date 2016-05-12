@@ -5,7 +5,7 @@
   "description": "This extension allows you to monitor the price of everything you want and receive mail alerts when it reaches your price point",
   "version": "1.0",
 
-  "browser_action": {
+  "page_action": {
     "default_icon": "icon.png",
     "default_popup": "index.html"
   },
