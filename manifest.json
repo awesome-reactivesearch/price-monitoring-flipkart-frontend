@@ -5,7 +5,7 @@
   "description": "This extension allows you to monitor the price of everything you want and receive mail alerts when it reaches your price point",
   "version": "1.0",
  "background": {
-    "scripts": ["background.js"],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
   "page_action": {
