@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Flipkart price tracker",
-  "description": "This extension allows you to monitor the price of everything you want and receive mail alerts when it reaches your price point",
+  "description": "A flipkart.com extension to track product prices and set email alerts, built with appbase.io.",
   "version": "1.0",
   "background": {
     "scripts": ["js/background.js"],
