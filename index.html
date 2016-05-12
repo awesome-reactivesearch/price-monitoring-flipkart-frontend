@@ -7,26 +7,27 @@
 <html>
 
 <head>
-    <title>Getting Started Extension's Popup</title>
-    <style>
-    body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-        min-width: 500px;
-    }
-    
-    .form-control {
-        margin-bottom: 15px;
-    }
-    .img-responsive {
-        margin: 0 auto;
-    }
-    </style>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
-    <!--
+  <title>Flipkart Price Tracker</title>
+  <style>
+  body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 100%;
+    min-width: 500px;
+  }
+  
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  .img-responsive {
+    margin: 0 auto;
+  }
+  </style>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/index.js"></script>
+  <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
@@ -35,42 +36,42 @@
 </head>
 
 <body>
-    <div class="container">
-        <!-- Setting the header -->
-        <div class="row">
-            <center>
-                <h3>Flipkart</h3>
-                <h4>Product Price alert setter</h4>
-            </center>
-        </div>
-        <!-- Form for setting the product price range for getting notification -->
-        <div class="well">
-            <select class="form-control inline" id="condition">
-                <option value="lessThanValue">Less than a Value</option>
-                <option value="lessThanCurrent">Less than Current Price</option>
-                <option value="fixedPrice">At a fixed Price</option>
-            </select>
-            <input id="greaterThanInput" style="display:none;"></input>
-            <input class="form-control" id="lessThanInput" placeholder="Set Price"></input>
-            <input class="form-control" id="email"  placeholder="Enter your email"></input>
-            <center>
-                <button class="btn btn-primary" id="submit" name="submit">Set Alert</button>
-            </center>
-        </div>
-        <!-- Displaying the product information -->
-        <table>
-            <tr>
-                <td><img id="img" src="" height="200" width="150"></img>
-                </td>
-                <td style="padding-left:50px;">
-                    <p><b>Product Name  : </b><span id="name"></span></p>
-                    <p><b>Current Price : </b><span id="current_price"></span></p>
-                </td>
-            </tr>
-        </table>
-        <div class="row">
-            <img src="images/PoweredBy_Appbase.png" class=img-responsive center-block></img>
-        </div>
+  <div class="container">
+    <!-- Setting the header -->
+    <div class="row">
+      <center>
+        <h3>Flipkart</h3>
+        <h4>Product Price alert setter</h4>
+      </center>
+    </div>
+    <!-- Form for setting the product price range for getting notification -->
+    <div class="well">
+      <select class="form-control inline" id="condition">
+        <option value="lessThanValue">Less than a Value</option>
+        <option value="lessThanCurrent">Less than Current Price</option>
+        <option value="fixedPrice">At a fixed Price</option>
+      </select>
+      <input id="greaterThanInput" style="display:none;"></input>
+      <input class="form-control" id="lessThanInput" placeholder="Set Price"></input>
+      <input class="form-control" id="email" placeholder="Enter your email"></input>
+      <center>
+        <button class="btn btn-primary" id="submit" name="submit">Set Alert</button>
+      </center>
+    </div>
+    <!-- Displaying the product information -->
+    <table>
+      <tr>
+        <td><img id="img" src="" height="200" width="150"></img>
+        </td>
+        <td style="padding-left:50px;">
+          <p><b>Product Name  : </b><span id="name"></span></p>
+          <p><b>Current Price : </b><span id="current_price"></span></p>
+        </td>
+      </tr>
+    </table>
+    <div class="row">
+      <img src="images/PoweredBy_Appbase.png" class=img-responsive center-block></img>
+    </div>
 </body>
 
 </html>
